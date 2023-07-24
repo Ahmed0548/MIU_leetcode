@@ -1,0 +1,42 @@
+Write a function to return an array containing all elements common to two
+given arrays containing distinct positive integers. You should not use any inbuilt
+methods. You are allowed to use any number of arrays.
+
+The signature of the function is:
+int[] f(int[] first, int[] second)
+
+Examples:
+ --------------------------------|--------------------------------------------------------------
+| if the input parameters are    | return                                                       |
+|--------------------------------|--------------------------------------------------------------|
+| {1,8,3,2},{4,2,6,1}            | {1,2}                                                        |
+|--------------------------------|--------------------------------------------------------------|
+| {1,8,3,2,6},{2,6,1}            | {2,6,1}                                                      |
+|--------------------------------|--------------------------------------------------------------|
+| {1,3,7,9},{7,1,9,3}            | {1,3,7,9}                                                    |
+|--------------------------------|--------------------------------------------------------------|
+| {1,2}, {3,4}                   | {}                                                           |
+|--------------------------------|--------------------------------------------------------------|
+| {}, {1,2,3}                    | {}                                                           |
+|--------------------------------|--------------------------------------------------------------|
+| {1,2}, {}                      | {}                                                           |
+|--------------------------------|--------------------------------------------------------------|
+| {1,2}, null                    | null                                                         |
+|--------------------------------|--------------------------------------------------------------|
+| null, {}                       | null                                                         |
+|--------------------------------|--------------------------------------------------------------|
+| null, null                     | null                                                         |
+ --------------------------------|--------------------------------------------------------------
+
+NOTE: To ease debugging, Will return a string array.
+
+############################# solution ########################
+
+This is a Java code that defines a method named `commonElements` that takes two integer arrays as arguments and returns an integer array that contains the common elements of the two input arrays.
+
+The method first creates an empty `result` array with a length equal to the minimum length of the input arrays. It also initializes a `count` variable to keep track of the number of elements that have been added to the `result` array so far.
+
+Then, the method loops through each element in the first input array (`arr1`) and compares it with each element in the second input array (`arr2`) using nested `for` loops. If an element in `arr1` is equal to an element in `arr2`, the code checks whether the element has already been added to the `result` array using a third `for` loop that iterates through the `result` array till the `count` variable. If the element has not already been added, it is added to the `result` array and the `count` variable is incremented.
+
+Finally, the method uses the `Arrays.copyOf` method to return an array that contains only the elements that have been added to the `result` array. 
+
